@@ -1,0 +1,10 @@
+---
+# Template configuration files for mongodb
+
+- name: template is copied
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  become: true
+  loop: "{{ mongodb_templates_copy }}"
+  when: mongodb_copy_templates

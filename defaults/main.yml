@@ -1,0 +1,19 @@
+---
+# defaults file for mongodb
+
+mongodb_packages_state: present
+mongodb_remove_packages: true
+mongodb_enable_service: true
+mongodb_enable_selinux: true
+mongodb_copy_templates: true
+mongodb_firewall_configure: true
+mongodb_firewall_rules:
+  - service: ssh
+  - port: 3389
+mongodb_users:
+  - user: devops
+    group: docker
+mongodb_selinux_booleans:
+  - name: ftp_home_dir
+    state: true
+    persistent: true

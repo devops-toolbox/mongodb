@@ -1,0 +1,27 @@
+---
+# Install mongodb packages
+
+- name: unwanted packages are removed
+  package:
+    name: "{{ mongodb_packages_remove }}"
+    state: absent
+  become: true
+  when: mongodb_remove_packages
+
+- name: prereq repositories are installed
+  package:
+    name: "{{ mongodb_packages_repos }}"
+    state: "{{ mongodb_packages_state }}"
+  become: true
+
+- name: prereq packages are installed
+  package:
+    name: "{{ mongodb_packages_prereq }}"
+    state: "{{ mongodb_packages_state }}"
+  become: true
+
+- name: packages are installed
+  package:
+    name: "{{ mongodb_packages_install }}"
+    state: "{{ mongodb_packages_state }}"
+  become: true
