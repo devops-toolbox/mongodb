@@ -8,10 +8,10 @@ mongodb: Mongodb
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.mongodb](https://galaxy.ansible.com/devops-toolbox.mongodb)
+[https://galaxy.ansible.com/devopstoolbox.mongodb](https://galaxy.ansible.com/devopstoolbox.mongodb)
 
 ```bash
-ansible-galaxy install devops-toolbox.mongodb
+ansible-galaxy install devopstoolbox.mongodb
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: mongodb is configured
       import_role:
-        name: devops-toolbox.mongodb
+        name: devopstoolbox.mongodb
       vars:
         mongodb_packages_state: present
         mongodb_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
